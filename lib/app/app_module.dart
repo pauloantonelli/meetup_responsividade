@@ -11,9 +11,9 @@ import 'package:meetup_responsividade/app/app_widget.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        $AppController,
         $PadraoCoverController,
         $MenuLateralController,
-        $AppController,
       ];
 
   @override
