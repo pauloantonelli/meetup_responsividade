@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:meetup_responsividade/app/shared/screen_size.dart';
 
 class ColunaWidget extends StatelessWidget {
+  final controller =
+      Modular.get<ScreenSize>(); //outra forma de buscar a classe screen size
   @override
   Widget build(BuildContext context) {
-    final double defaultLarguraColunas =
-        MediaQuery.of(context).size.width >= 800
-            ? MediaQuery.of(context).size.width / 4.0
-            : MediaQuery.of(context).size.width / 2.0;
     return Container(
-      width: MediaQuery.of(context).size.width >= 599
-          ? defaultLarguraColunas
-          : MediaQuery.of(context).size.width,
+      width: controller.isMobile(context: context)
+          ? controller.col_12(context: context)
+          : controller.col_3(context: context),
       child: Column(
         children: [
           Text(
@@ -21,7 +21,7 @@ class ColunaWidget extends StatelessWidget {
                 fontSize: 18.0),
           ),
           Container(
-            padding: MediaQuery.of(context).size.width >= 800
+            padding: controller.isDesktopLg(context: context)
                 ? EdgeInsets.symmetric(horizontal: 0.0)
                 : EdgeInsets.symmetric(horizontal: 10.0),
             child: Image.network(

@@ -8,7 +8,7 @@ import 'widgets/body/body_widget.dart';
 
 class MenuLateralPage extends StatefulWidget {
   final String title;
-  const MenuLateralPage({Key key, this.title = "MenuLateral"})
+  const MenuLateralPage({Key key, this.title = "Template com Menu Lateral"})
       : super(key: key);
 
   @override
@@ -17,39 +17,42 @@ class MenuLateralPage extends StatefulWidget {
 
 class _MenuLateralPageState
     extends ModularState<MenuLateralPage, MenuLateralController> {
-  //use 'controller' variable to access controller
-
+  // template de exemplo
+  // https://www.w3schools.com/css/tryit.asp?filename=trycss_template4
   @override
   Widget build(BuildContext context) {
-    final double totalHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.purple,
-      appBar: MediaQuery.of(context).size.width <= 800
+      appBar: controller.screenSize.isMobile(context: context) ||
+              controller.screenSize.isTablet(context: context)
           ? AppBar(
               backgroundColor: Colors.transparent,
             )
           : null,
-      drawer: MediaQuery.of(context).size.width <= 800
+      drawer: controller.screenSize.isMobile(context: context) ||
+              controller.screenSize.isTablet(context: context)
           ? Drawer(
               child: MenuWidget(),
             )
           : null,
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        width: controller.screenSize.totalWidth(context: context),
+        height: controller.screenSize.totalHeight(context: context),
         child: Row(
           children: <Widget>[
-            MediaQuery.of(context).size.width >= 800
+            controller.screenSize.isDesktopLg(context: context) ||
+                    controller.screenSize.isDesktopXl(context: context)
                 ? Container(
                     width: 200.0,
                     child: MenuWidget(),
                   )
                 : Container(),
             Container(
-              width: MediaQuery.of(context).size.width >= 800
-                  ? MediaQuery.of(context).size.width - 200.0
-                  : MediaQuery.of(context).size.width,
-              height: totalHeight,
+              width: controller.screenSize.isDesktopLg(context: context) ||
+                      controller.screenSize.isDesktopXl(context: context)
+                  ? controller.screenSize.totalWidth(context: context) - 200.0
+                  : controller.screenSize.totalWidth(context: context),
+              height: controller.screenSize.totalHeight(context: context),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
