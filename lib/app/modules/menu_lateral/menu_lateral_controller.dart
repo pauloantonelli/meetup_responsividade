@@ -1,3 +1,4 @@
+import 'package:meetup_responsividade/app/shared/screen_size.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -8,11 +9,7 @@ class MenuLateralController = _MenuLateralControllerBase
     with _$MenuLateralController;
 
 abstract class _MenuLateralControllerBase with Store {
-  @observable
-  int value = 0;
+  final ScreenSize screenSize;
 
-  @action
-  void increment() {
-    value++;
-  }
+  _MenuLateralControllerBase(this.screenSize);
 }
