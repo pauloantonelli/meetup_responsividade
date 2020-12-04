@@ -79,6 +79,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  # se nao usar fvm para versionar versao do flutter, remova a palavra fvm e usar comando normalmente
 vars:
   clean: fvm flutter clean
   get: fvm flutter pub get

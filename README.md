@@ -1,16 +1,13 @@
 # meetup_responsividade
 
-A new Flutter project. Created by Slidy
+Exemplos de responsividade utilizando flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para rodar o projeto na maquina tenha flutter 1.23.0-18.1.pre ou se utiliza o fvm(flutter version manager) de um:
+#fvm install 1.23.0-18.1.pre
+depois
+#fvm use 1.23.0-18.1.pre
+depois tenha o slidy instalado la pub.dev e rode o comando:
+#slidy run mobx(caso use o fvm, caso contrario retire o fvm do script no pubspec antes do flutter).
+para criar os arquivos .g.dart do mobx.
