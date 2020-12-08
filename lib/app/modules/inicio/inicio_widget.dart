@@ -12,8 +12,8 @@ class _InicioWidgetState extends ModularState<InicioWidget, InicioController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: controller.screenSize.totalWidth(context: context),
-        height: controller.screenSize.totalHeight(context: context),
+        width: controller.grid.totalWidth(context: context),
+        height: controller.grid.totalHeight(context: context),
         alignment: Alignment.center,
         child: SingleChildScrollView(
           child: Wrap(

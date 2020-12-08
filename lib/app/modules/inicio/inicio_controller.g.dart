@@ -7,7 +7,7 @@ part of 'inicio_controller.dart';
 // **************************************************************************
 
 final $InicioController = BindInject(
-  (i) => InicioController(i<ScreenSize>()),
+  (i) => InicioController(i<Grid>()),
   singleton: true,
   lazy: true,
 );

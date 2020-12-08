@@ -7,7 +7,7 @@ part of 'body_controller.dart';
 // **************************************************************************
 
 final $BodyController = BindInject(
-  (i) => BodyController(i<ScreenSize>()),
+  (i) => BodyController(i<Grid>()),
   singleton: true,
   lazy: true,
 );

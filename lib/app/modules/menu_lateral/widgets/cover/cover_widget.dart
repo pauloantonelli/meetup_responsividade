@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/shared/screen_size.dart';
+import 'package:meetup_responsividade/app/shared/grid.dart';
 
 class CoverWidget extends StatelessWidget {
   final controller =
-      Modular.get<ScreenSize>(); //outra forma de buscar a classe screen size
+      Modular.get<Grid>(); //outra forma de buscar a classe screen size
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -7,7 +7,7 @@ part of 'menu_lateral_controller.dart';
 // **************************************************************************
 
 final $MenuLateralController = BindInject(
-  (i) => MenuLateralController(i<ScreenSize>()),
+  (i) => MenuLateralController(i<Grid>()),
   singleton: true,
   lazy: true,
 );

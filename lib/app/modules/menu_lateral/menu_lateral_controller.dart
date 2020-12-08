@@ -1,3 +1,4 @@
+import 'package:meetup_responsividade/app/shared/grid.dart';
 import 'package:meetup_responsividade/app/shared/screen_size.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -9,7 +10,7 @@ class MenuLateralController = _MenuLateralControllerBase
     with _$MenuLateralController;
 
 abstract class _MenuLateralControllerBase with Store {
-  final ScreenSize screenSize;
+  final Grid grid;
 
-  _MenuLateralControllerBase(this.screenSize);
+  _MenuLateralControllerBase(this.grid);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meetup_responsividade/app/shared/screen_size.dart';
+import 'package:meetup_responsividade/app/shared/grid.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -10,7 +10,7 @@ part 'inicio_controller.g.dart';
 class InicioController = _InicioControllerBase with _$InicioController;
 
 abstract class _InicioControllerBase with Store {
-  final ScreenSize screenSize;
+  final Grid grid;
   List<Map<String, String>> menuOptions = [
     {
       'title': 'padrão menu lateral',
@@ -24,15 +24,15 @@ abstract class _InicioControllerBase with Store {
     },
   ];
 
-  _InicioControllerBase(this.screenSize);
+  _InicioControllerBase(this.grid);
 
   List<Widget> generateMenuOptionsWidget(BuildContext context) {
     return this
         .menuOptions
         .map((element) => Container(
-              width: screenSize.isMobile(context: context)
-                  ? screenSize.col_12(context: context)
-                  : screenSize.col_6(context: context),
+              width: grid.isMobile(context: context)
+                  ? grid.col_12(context: context)
+                  : grid.col_6(context: context),
               decoration: BoxDecoration(),
               child: GestureDetector(
                 onTap: () {

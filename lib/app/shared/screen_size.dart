@@ -1,31 +1,73 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:meetup_responsividade/app/shared/breakpoints.dart';
 
 part 'screen_size.g.dart';
 
 @Injectable(singleton: false)
-class ScreenSize {
-  bool isDesktopXl({@required BuildContext context}) {
-    return MediaQuery.of(context).size.width > 1280.0;
+class ScreenSize extends Breakpoints {
+  bool isMobile({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width <= this.mobile;
   }
 
-  bool isDesktopLg({@required BuildContext context}) {
-    return MediaQuery.of(context).size.width > 800.0 &&
-        MediaQuery.of(context).size.width < 1280.0;
+  bool isMobileUP({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width >= this.mobile;
+  }
+
+  bool isMobileDOWN({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width <= this.mobile;
   }
 
   bool isTablet({@required BuildContext context}) {
-    return MediaQuery.of(context).size.width > 600.0 &&
-        MediaQuery.of(context).size.width < 800.0;
+    return MediaQuery.of(context).size.width > this.mobile &&
+        MediaQuery.of(context).size.width <= this.tablet;
   }
 
-  bool isMobile({@required BuildContext context}) {
-    return MediaQuery.of(context).size.width > 319.0 &&
-        MediaQuery.of(context).size.width <= 599.0;
+  bool isTabletUP({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width >= this.tablet;
   }
 
-  bool isWatch({@required BuildContext context}) {
-    return MediaQuery.of(context).size.width < 318.0;
+  bool isTabletDOWN({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width <= this.tablet;
+  }
+
+  bool isDesktopLg({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width > this.tablet &&
+        MediaQuery.of(context).size.width <= this.desktopLg;
+  }
+
+  bool isDesktopLgUP({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width >= this.desktopLg;
+  }
+
+  bool isDesktopLgDOWN({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width <= this.desktopLg;
+  }
+
+  bool isDesktopXl({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width > this.desktopLg &&
+        MediaQuery.of(context).size.width <= this.desktopXl;
+  }
+
+  bool isDesktopXlUP({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width >= this.desktopXl;
+  }
+
+  bool isDesktopXlDOWN({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width <= this.desktopXl;
+  }
+
+  bool isDesktopXXl({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width > this.desktopXl &&
+        MediaQuery.of(context).size.width <= this.desktopXXl;
+  }
+
+  bool isDesktopXXlUP({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width >= this.desktopXXl;
+  }
+
+  bool isDesktopXXlDOWN({@required BuildContext context}) {
+    return MediaQuery.of(context).size.width <= this.desktopXXl;
   }
 
   double totalWidth({@required BuildContext context}) {
@@ -34,65 +76,5 @@ class ScreenSize {
 
   double totalHeight({@required BuildContext context}) {
     return MediaQuery.of(context).size.height;
-  }
-
-  double col_1({@required BuildContext context}) {
-    final width = 8.33 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_2({@required BuildContext context}) {
-    final width = 16.66 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_3({@required BuildContext context}) {
-    final width = 25 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_4({@required BuildContext context}) {
-    final width = 33.33 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_5({@required BuildContext context}) {
-    final width = 41.66 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_6({@required BuildContext context}) {
-    final width = 50 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_7({@required BuildContext context}) {
-    final width = 58.33 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_8({@required BuildContext context}) {
-    final width = 66.66 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_9({@required BuildContext context}) {
-    final width = 75 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_10({@required BuildContext context}) {
-    final width = 83.33 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_11({@required BuildContext context}) {
-    final width = 91.66 / 100 * MediaQuery.of(context).size.width;
-    return width;
-  }
-
-  double col_12({@required BuildContext context}) {
-    final width = 100 * MediaQuery.of(context).size.width;
-    return width;
   }
 }

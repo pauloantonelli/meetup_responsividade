@@ -12,6 +12,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:meetup_responsividade/app/app_widget.dart';
 
+import 'shared/colunas/colunas.dart';
+import 'shared/colunas/colunas_md.dart';
+import 'shared/grid.dart';
 import 'shared/screen_size.dart';
 
 class AppModule extends MainModule {
@@ -23,7 +26,10 @@ class AppModule extends MainModule {
         $PadraoCoverController,
         $MenuLateralController,
         $FooterController,
-        $ScreenSize
+        $ScreenSize,
+        $Colunas,
+        $ColunasMD,
+        $Grid
       ];
 
   @override

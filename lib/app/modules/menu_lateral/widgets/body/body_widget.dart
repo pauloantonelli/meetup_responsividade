@@ -12,8 +12,8 @@ class _BodyWidgetState extends ModularState<BodyWidget, BodyController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: controller.screenSize.col_12(context: context),
-      padding: controller.screenSize.isTablet(context: context)
+      width: controller.grid.col_12(context: context),
+      padding: controller.grid.isTablet(context: context)
           ? EdgeInsets.symmetric(vertical: 30.0)
           : EdgeInsets.all(30.0),
       color: Colors.purple,

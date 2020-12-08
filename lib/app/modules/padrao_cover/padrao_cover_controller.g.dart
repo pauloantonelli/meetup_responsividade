@@ -7,7 +7,7 @@ part of 'padrao_cover_controller.dart';
 // **************************************************************************
 
 final $PadraoCoverController = BindInject(
-  (i) => PadraoCoverController(i<ScreenSize>()),
+  (i) => PadraoCoverController(i<Grid>()),
   singleton: true,
   lazy: true,
 );

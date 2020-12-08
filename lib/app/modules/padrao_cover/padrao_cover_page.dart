@@ -22,9 +22,9 @@ class _PadraoCoverPageState
   @override
   Widget build(BuildContext context) {
     final double larguraTotalTela =
-        controller.screenSize.totalWidth(context: context);
+        controller.grid.totalWidth(context: context);
     final double alturaTotalTela =
-        controller.screenSize.totalHeight(context: context);
+        controller.grid.totalHeight(context: context);
     return Scaffold(
       backgroundColor: Colors.purple,
       appBar: AppBar(
@@ -42,9 +42,8 @@ class _PadraoCoverPageState
               CoverWidget(),
               Container(
                   padding: EdgeInsets.symmetric(
-                      horizontal: controller.screenSize
-                                  .isMobile(context: context) ||
-                              controller.screenSize.isTablet(context: context)
+                      horizontal: controller.grid.isMobile(context: context) ||
+                              controller.grid.isTablet(context: context)
                           ? 0.0
                           : 40.0),
                   child: BodyWidget()),

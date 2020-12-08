@@ -23,36 +23,32 @@ class _MenuLateralPageState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.purple,
-      appBar: controller.screenSize.isMobile(context: context) ||
-              controller.screenSize.isTablet(context: context)
+      appBar: controller.grid.isDesktopLgDOWN(context: context)
           ? AppBar(
               backgroundColor: Colors.transparent,
             )
           : null,
-      drawer: controller.screenSize.isMobile(context: context) ||
-              controller.screenSize.isTablet(context: context)
+      drawer: controller.grid.isDesktopLgDOWN(context: context)
           ? Drawer(
               child: MenuWidget(),
             )
           : null,
       body: Container(
-        width: controller.screenSize.totalWidth(context: context),
-        height: controller.screenSize.totalHeight(context: context),
+        width: controller.grid.totalWidth(context: context),
+        height: controller.grid.totalHeight(context: context),
         child: Row(
           children: <Widget>[
-            controller.screenSize.isDesktopLg(context: context) ||
-                    controller.screenSize.isDesktopXl(context: context)
+            controller.grid.isDesktopLgUP(context: context)
                 ? Container(
                     width: 200.0,
                     child: MenuWidget(),
                   )
                 : Container(),
             Container(
-              width: controller.screenSize.isDesktopLg(context: context) ||
-                      controller.screenSize.isDesktopXl(context: context)
-                  ? controller.screenSize.totalWidth(context: context) - 200.0
-                  : controller.screenSize.totalWidth(context: context),
-              height: controller.screenSize.totalHeight(context: context),
+              width: controller.grid.isDesktopLgUP(context: context)
+                  ? controller.grid.totalWidth(context: context) - 200.0
+                  : controller.grid.totalWidth(context: context),
+              height: controller.grid.totalHeight(context: context),
               child: SingleChildScrollView(
                 child: Column(
                   children: [

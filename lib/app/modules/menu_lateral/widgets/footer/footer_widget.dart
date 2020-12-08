@@ -11,7 +11,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: controller.screenSize.col_12(context: context),
+      width: controller.grid.col_12(context: context),
       color: Colors.purple[900],
       padding: EdgeInsets.symmetric(vertical: 20.0),
       child: Wrap(
@@ -19,16 +19,16 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           Container(
-            width: controller.screenSize.col_2(context: context),
+            width: controller.grid.col_2(context: context),
             child: Image.network(
               'https://yt3.ggpht.com/a/AATXAJxBjsUzuHAdiLP0iX7bAw-dUBzJ5uzZyneuuSZH=s900-c-k-c0x00ffffff-no-rj',
               height: 80.0,
             ),
           ),
           Container(
-            width: controller.screenSize.isMobile(context: context)
-                ? controller.screenSize.col_12(context: context)
-                : controller.screenSize.col_2(context: context),
+            width: controller.grid.isMobile(context: context)
+                ? controller.grid.col_12(context: context)
+                : controller.grid.col_2(context: context),
             child: Column(
               children: [
                 Container(
@@ -71,9 +71,9 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
             ),
           ),
           Container(
-            width: controller.screenSize.isMobile(context: context)
-                ? controller.screenSize.col_12(context: context)
-                : controller.screenSize.col_2(context: context),
+            width: controller.grid.isMobile(context: context)
+                ? controller.grid.col_12(context: context)
+                : controller.grid.col_2(context: context),
             child: Column(
               children: [
                 Container(
@@ -116,9 +116,9 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
             ),
           ),
           Container(
-            width: controller.screenSize.isMobile(context: context)
-                ? controller.screenSize.col_12(context: context)
-                : controller.screenSize.col_2(context: context),
+            width: controller.grid.isMobile(context: context)
+                ? controller.grid.col_12(context: context)
+                : controller.grid.col_2(context: context),
             child: Column(
               children: [
                 Container(

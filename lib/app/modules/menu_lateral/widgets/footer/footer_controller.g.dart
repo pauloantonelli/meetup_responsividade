@@ -7,7 +7,7 @@ part of 'footer_controller.dart';
 // **************************************************************************
 
 final $FooterController = BindInject(
-  (i) => FooterController(i<ScreenSize>()),
+  (i) => FooterController(i<Grid>()),
   singleton: true,
   lazy: true,
 );
