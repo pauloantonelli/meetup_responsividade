@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/shared/grid.dart';
+import 'package:meetup_responsividade/app/shared/grid/grid.dart';
 
 class MenuWidget extends StatelessWidget {
   final controller =

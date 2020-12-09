@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/modules/menu_lateral/widgets/footer/footer_controller.dart';
+import 'package:meetup_responsividade/app/shared/grid/grid.dart';
 
-class FooterWidget extends StatefulWidget {
-  @override
-  _FooterWidgetState createState() => _FooterWidgetState();
-}
-
-class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
+class FooterWidget extends StatelessWidget {
+  final controller =
+      Modular.get<Grid>(); //outra forma de buscar a classe screen size
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: controller.grid.col_12(context: context),
+      width: controller.col_12(context: context),
       color: Colors.purple[900],
       padding: EdgeInsets.symmetric(vertical: 20.0),
       child: Wrap(
@@ -19,16 +16,16 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           Container(
-            width: controller.grid.col_2(context: context),
+            width: controller.col_2(context: context),
             child: Image.network(
               'https://yt3.ggpht.com/a/AATXAJxBjsUzuHAdiLP0iX7bAw-dUBzJ5uzZyneuuSZH=s900-c-k-c0x00ffffff-no-rj',
               height: 80.0,
             ),
           ),
           Container(
-            width: controller.grid.isMobile(context: context)
-                ? controller.grid.col_12(context: context)
-                : controller.grid.col_2(context: context),
+            width: controller.isMobile(context: context)
+                ? controller.col_12(context: context)
+                : controller.col_2(context: context),
             child: Column(
               children: [
                 Container(
@@ -71,9 +68,9 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
             ),
           ),
           Container(
-            width: controller.grid.isMobile(context: context)
-                ? controller.grid.col_12(context: context)
-                : controller.grid.col_2(context: context),
+            width: controller.isMobile(context: context)
+                ? controller.col_12(context: context)
+                : controller.col_2(context: context),
             child: Column(
               children: [
                 Container(
@@ -116,9 +113,9 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
             ),
           ),
           Container(
-            width: controller.grid.isMobile(context: context)
-                ? controller.grid.col_12(context: context)
-                : controller.grid.col_2(context: context),
+            width: controller.isMobile(context: context)
+                ? controller.col_12(context: context)
+                : controller.col_2(context: context),
             child: Column(
               children: [
                 Container(

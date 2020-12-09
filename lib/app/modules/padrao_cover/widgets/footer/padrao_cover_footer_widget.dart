@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/modules/menu_lateral/widgets/footer/footer_controller.dart';
+import 'package:meetup_responsividade/app/modules/padrao_cover/widgets/footer/padrao_cover_footer_controller.dart';
 
-class FooterWidget extends StatefulWidget {
+class PadraoCoverFooterWidget extends StatefulWidget {
   @override
-  _FooterWidgetState createState() => _FooterWidgetState();
+  _PadraoCoverFooterWidgetState createState() =>
+      _PadraoCoverFooterWidgetState();
 }
 
-class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
+class _PadraoCoverFooterWidgetState
+    extends ModularState<PadraoCoverFooterWidget, PadraoCoverFooterController> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,5 +1,4 @@
-import 'package:meetup_responsividade/app/shared/grid.dart';
-import 'package:meetup_responsividade/app/shared/screen_size.dart';
+import 'package:meetup_responsividade/app/shared/grid/grid.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

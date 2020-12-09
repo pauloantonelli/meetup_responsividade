@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meetup_responsividade/app/shared/grid.dart';
+import 'package:meetup_responsividade/app/shared/grid/grid.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -22,6 +22,11 @@ abstract class _InicioControllerBase with Store {
       'image': 'assets/images/padrao-cover.png',
       'link': '/padrao-cover'
     },
+    {
+      'title': 'menus laterais',
+      'image': 'assets/images/menus-laterais.jpg',
+      'link': '/menus-laterais'
+    },
   ];
 
   _InicioControllerBase(this.grid);
@@ -30,7 +35,7 @@ abstract class _InicioControllerBase with Store {
     return this
         .menuOptions
         .map((element) => Container(
-              width: grid.isMobile(context: context)
+              width: grid.isDesktopLgDOWN(context: context)
                   ? grid.col_12(context: context)
                   : grid.col_6(context: context),
               decoration: BoxDecoration(),
@@ -39,10 +44,13 @@ abstract class _InicioControllerBase with Store {
                   Modular.to.pushReplacementNamed('${element['link']}');
                 },
                 child: Column(children: [
-                  Image.asset(element['image']),
                   Text(
                     'ir para ${element['title']}',
-                    style: TextStyle(color: Colors.purple, fontSize: 20.0),
+                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 20.0),
+                    child: Image.asset(element['image']),
                   ),
                 ]),
               ),

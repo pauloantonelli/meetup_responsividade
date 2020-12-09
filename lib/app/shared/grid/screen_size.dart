@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/shared/breakpoints.dart';
+import 'package:meetup_responsividade/app/shared/grid/breakpoints.dart';
 
 part 'screen_size.g.dart';
 

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/shared/grid.dart';
 
-class MenuWidget extends StatelessWidget {
-  final controller =
-      Modular.get<Grid>(); //outra forma de buscar a classe screen size
+import 'padrao_cover_menu_controller.dart';
+
+class PadraoCoverMenuWidget extends StatefulWidget {
+  @override
+  _PadraoCoverMenuWidgetState createState() => _PadraoCoverMenuWidgetState();
+}
+
+class _PadraoCoverMenuWidgetState
+    extends ModularState<PadraoCoverMenuWidget, PadraoCoverMenuController> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +22,7 @@ class MenuWidget extends StatelessWidget {
                 'https://yt3.ggpht.com/a/AATXAJxBjsUzuHAdiLP0iX7bAw-dUBzJ5uzZyneuuSZH=s900-c-k-c0x00ffffff-no-rj'),
           ),
           Container(
-            width: controller.totalWidth(context: context),
+            width: controller.grid.totalWidth(context: context),
             height: 40.0,
             margin: EdgeInsets.symmetric(vertical: 5.0),
             child: FlatButton(
@@ -28,7 +33,7 @@ class MenuWidget extends StatelessWidget {
                 )),
           ),
           Container(
-            width: controller.totalWidth(context: context),
+            width: controller.grid.totalWidth(context: context),
             height: 40.0,
             margin: EdgeInsets.symmetric(vertical: 5.0),
             child: FlatButton(
@@ -39,7 +44,7 @@ class MenuWidget extends StatelessWidget {
                 )),
           ),
           Container(
-            width: controller.totalWidth(context: context),
+            width: controller.grid.totalWidth(context: context),
             height: 40.0,
             margin: EdgeInsets.symmetric(vertical: 5.0),
             child: FlatButton(

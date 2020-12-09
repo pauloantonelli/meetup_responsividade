@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/modules/menu_lateral/widgets/body/body_controller.dart';
 import 'package:meetup_responsividade/app/modules/menu_lateral/widgets/coluna/coluna_widget.dart';
 
-class BodyWidget extends StatefulWidget {
+import 'padrao_cover_body_controller.dart';
+
+class PadraoCoverBodyWidget extends StatefulWidget {
   @override
-  _BodyWidgetState createState() => _BodyWidgetState();
+  _PadraoCoverBodyWidgetState createState() => _PadraoCoverBodyWidgetState();
 }
 
-class _BodyWidgetState extends ModularState<BodyWidget, BodyController> {
+class _PadraoCoverBodyWidgetState
+    extends ModularState<PadraoCoverBodyWidget, PadraoCoverBodyController> {
   @override
   Widget build(BuildContext context) {
     return Container(

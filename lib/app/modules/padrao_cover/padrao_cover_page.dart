@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/modules/padrao_cover/widgets/body/body_widget.dart';
-import 'package:meetup_responsividade/app/modules/padrao_cover/widgets/cover/cover_widget.dart';
-import 'package:meetup_responsividade/app/modules/padrao_cover/widgets/footer/footer_widget.dart';
-import 'package:meetup_responsividade/app/modules/padrao_cover/widgets/menu/menu_widget.dart';
 import 'padrao_cover_controller.dart';
+import 'widgets/cover/padrao_cover_cover_widget.dart';
+import 'widgets/footer/padrao_cover_footer_widget.dart';
+import 'widgets/menu/padrao_cover_menu_widget.dart';
 
 class PadraoCoverPage extends StatefulWidget {
   final String title;
@@ -31,7 +30,7 @@ class _PadraoCoverPageState
         backgroundColor: Colors.transparent,
       ),
       drawer: Drawer(
-        child: MenuWidget(),
+        child: PadraoCoverMenuWidget(),
       ),
       body: Container(
         width: larguraTotalTela,
@@ -39,15 +38,16 @@ class _PadraoCoverPageState
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              CoverWidget(),
+              PadraoCoverBodyWidget(),
               Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: controller.grid.isMobile(context: context) ||
-                              controller.grid.isTablet(context: context)
-                          ? 0.0
-                          : 40.0),
-                  child: BodyWidget()),
-              FooterWidget(),
+                padding: EdgeInsets.symmetric(
+                    horizontal: controller.grid.isMobile(context: context) ||
+                            controller.grid.isTablet(context: context)
+                        ? 0.0
+                        : 40.0),
+                child: PadraoCoverBodyWidget(),
+              ),
+              PadraoCoverFooterWidget(),
             ],
           ),
         ),

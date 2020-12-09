@@ -15,6 +15,7 @@ class _InicioWidgetState extends ModularState<InicioWidget, InicioController> {
         width: controller.grid.totalWidth(context: context),
         height: controller.grid.totalHeight(context: context),
         alignment: Alignment.center,
+        decoration: BoxDecoration(color: Colors.purple[700]),
         child: SingleChildScrollView(
           child: Wrap(
             children: controller.generateMenuOptionsWidget(context),
