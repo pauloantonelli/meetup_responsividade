@@ -4,6 +4,9 @@ import 'package:meetup_responsividade/app/modules/inicio/inicio_widget.dart';
 
 import 'app_controller.dart';
 import 'app_widget.dart';
+import 'modules/galeria_imagens/galeria_imagens_controller.dart';
+import 'modules/galeria_imagens/galeria_imagens_page.dart';
+import 'modules/galeria_imagens/widgets/grid_images/grid_images_controller.dart';
 import 'modules/inicio/inicio_controller.dart';
 import 'modules/menu_lateral/menu_lateral_controller.dart';
 import 'modules/menu_lateral/menu_lateral_page.dart';
@@ -30,6 +33,8 @@ class AppModule extends MainModule {
         $PadraoCoverFooterController,
         $MenuLateralController,
         $MenusLateraisController,
+        $GaleriaImagensController,
+        $GridImagesController,
         $ScreenSize,
         $Colunas,
         $ColunasMD,
@@ -45,7 +50,9 @@ class AppModule extends MainModule {
         ModularRouter('/padrao-cover',
             child: (context, args) => PadraoCoverPage()),
         ModularRouter('/menus-laterais',
-            child: (context, args) => MenusLateraisPage())
+            child: (context, args) => MenusLateraisPage()),
+        ModularRouter('/galeria-imagens',
+            child: (context, args) => GaleriaImagensPage())
       ];
 
   @override

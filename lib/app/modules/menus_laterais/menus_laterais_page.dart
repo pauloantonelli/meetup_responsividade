@@ -16,6 +16,8 @@ class MenusLateraisPage extends StatefulWidget {
 
 class _MenusLateraisPageState
     extends ModularState<MenusLateraisPage, MenusLateraisController> {
+  // template de exemplo
+  // https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_breakpoints
   @override
   Widget build(BuildContext context) {
     return Scaffold(

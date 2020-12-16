@@ -13,19 +13,24 @@ abstract class _InicioControllerBase with Store {
   final Grid grid;
   List<Map<String, String>> menuOptions = [
     {
-      'title': 'padrão menu lateral',
+      'title': 'padrão menu lateral responsivo',
       'image': 'assets/images/padra-menu-lateral.png',
       'link': '/padrao-menu'
     },
     {
-      'title': 'padrão cover',
+      'title': 'padrão cove responsivo',
       'image': 'assets/images/padrao-cover.png',
       'link': '/padrao-cover'
     },
     {
-      'title': 'menus laterais',
+      'title': 'menus laterais responsivos',
       'image': 'assets/images/menus-laterais.jpg',
       'link': '/menus-laterais'
+    },
+    {
+      'title': 'galeria de imagens responsiva',
+      'image': 'assets/images/galeria-responsiva.jpg',
+      'link': '/galeria-imagens'
     },
   ];
 
