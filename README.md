@@ -3,7 +3,7 @@
 Exemplos de responsividade utilizando flutter
 
 ## exemplos por vir
-[ ] pagina informativa com menus laterais distintos
+[x] pagina informativa com menus laterais distintos
 
 [ ] galeria de imagens responsiva com fotos de tamanhos diferentes
 
