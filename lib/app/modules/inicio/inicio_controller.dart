@@ -32,6 +32,11 @@ abstract class _InicioControllerBase with Store {
       'image': 'assets/images/galeria-responsiva.jpg',
       'link': '/galeria-imagens'
     },
+    {
+      'title': 'home site de noticias',
+      'image': 'assets/images/site_noticias.png',
+      'link': '/site-noticias'
+    },
   ];
 
   _InicioControllerBase(this.grid);
@@ -42,8 +47,8 @@ abstract class _InicioControllerBase with Store {
         .map((element) => Container(
               width: grid.isDesktopLgDOWN(context: context)
                   ? grid.col_12(context: context)
-                  : grid.col_6(context: context),
-              decoration: BoxDecoration(),
+                  : grid.col_2(context: context),
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: GestureDetector(
                 onTap: () {
                   Modular.to.pushReplacementNamed('${element['link']}');

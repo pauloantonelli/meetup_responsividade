@@ -1,3 +1,4 @@
+import 'modules/inicio/inicio_widget.dart';
 import 'modules/site_noticias/widgets/footer/site_noticias_footer_controller.dart';
 import 'modules/site_noticias/widgets/noticias-mais-lidas/noticias_mais_lidas_controller.dart';
 import 'modules/site_noticias/widgets/noticias-mais-lidas/widgets//botao_noticias_especiais/botao_noticias_especiais_controller.dart';
@@ -55,8 +56,8 @@ class AppModule extends MainModule {
 
   @override
   List<ModularRouter> get routers => [
-        // ModularRouter(Modular.initialRoute,
-        //     child: (context, args) => SiteNoticiasPage()), // InicioWidget
+        ModularRouter(Modular.initialRoute,
+            child: (context, args) => InicioWidget()),
         ModularRouter('/padrao-menu',
             child: (context, args) => MenuLateralPage()),
         ModularRouter('/padrao-cover',
@@ -65,7 +66,7 @@ class AppModule extends MainModule {
             child: (context, args) => MenusLateraisPage()),
         ModularRouter('/galeria-imagens',
             child: (context, args) => GaleriaImagensPage()),
-        ModularRouter(Modular.initialRoute, //'/site-noticias',
+        ModularRouter('/site-noticias',
             child: (context, args) => SiteNoticiasPage()),
       ];
 
