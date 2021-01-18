@@ -8,7 +8,7 @@ Exemplos de responsividade utilizando flutter
 
 [x] galeria de imagens responsiva com fotos de tamanhos diferentes
 
-[ ] site de noticias
+[x] site de noticias
 
 ## Getting Started
 
