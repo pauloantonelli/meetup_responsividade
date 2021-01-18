@@ -4,10 +4,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 part 'padrao_cover_cover_controller.g.dart';
 
 @Injectable()
-class PadraoCoverBodyController = _PadraoCoverBodyControllerBase
-    with _$PadraoCoverBodyController;
+class PadraoCoverController = _PadraoCoverControllerBase
+    with _$PadraoCoverController;
 
-abstract class _PadraoCoverBodyControllerBase with Store {
+abstract class _PadraoCoverControllerBase with Store {
   @observable
   int value = 0;
 

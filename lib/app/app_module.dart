@@ -1,6 +1,10 @@
+import 'modules/site_noticias/widgets/footer/site_noticias_footer_controller.dart';
+import 'modules/site_noticias/widgets/noticias-mais-lidas/noticias_mais_lidas_controller.dart';
+import 'modules/site_noticias/widgets/noticias-mais-lidas/widgets//botao_noticias_especiais/botao_noticias_especiais_controller.dart';
+import 'modules/site_noticias/widgets/cover/widgets/botao_noticias/botao_noticias_controller.dart';
+import 'modules/site_noticias/site_noticias_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meetup_responsividade/app/modules/inicio/inicio_widget.dart';
 
 import 'app_controller.dart';
 import 'app_widget.dart';
@@ -17,6 +21,8 @@ import 'modules/padrao_cover/padrao_cover_page.dart';
 import 'modules/padrao_cover/widgets/body/padrao_cover_body_controller.dart';
 import 'modules/padrao_cover/widgets/footer/padrao_cover_footer_controller.dart';
 import 'modules/padrao_cover/widgets/menu/padrao_cover_menu_controller.dart';
+import 'modules/site_noticias/site_noticias_page.dart';
+import 'modules/site_noticias/widgets/noticias-mais-lidas/widgets/botao_noticias_mais_lidas/botao_noticias_mais_lidas_controller.dart';
 import 'shared/grid/colunas/colunas.dart';
 import 'shared/grid/colunas/colunas_md.dart';
 import 'shared/grid/grid.dart';
@@ -35,6 +41,12 @@ class AppModule extends MainModule {
         $MenusLateraisController,
         $GaleriaImagensController,
         $GridImagesController,
+        $SiteNoticiasController,
+        $BotaoNoticiasController,
+        $BotaoNoticiasEspeciaisController,
+        $BotaoNoticiasMaisLidasController,
+        $NoticiasMaisLidasController,
+        $SiteNoticiasFooterController,
         $ScreenSize,
         $Colunas,
         $ColunasMD,
@@ -43,8 +55,8 @@ class AppModule extends MainModule {
 
   @override
   List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute,
-            child: (context, args) => InicioWidget()),
+        // ModularRouter(Modular.initialRoute,
+        //     child: (context, args) => SiteNoticiasPage()), // InicioWidget
         ModularRouter('/padrao-menu',
             child: (context, args) => MenuLateralPage()),
         ModularRouter('/padrao-cover',
@@ -52,7 +64,9 @@ class AppModule extends MainModule {
         ModularRouter('/menus-laterais',
             child: (context, args) => MenusLateraisPage()),
         ModularRouter('/galeria-imagens',
-            child: (context, args) => GaleriaImagensPage())
+            child: (context, args) => GaleriaImagensPage()),
+        ModularRouter(Modular.initialRoute, //'/site-noticias',
+            child: (context, args) => SiteNoticiasPage()),
       ];
 
   @override
